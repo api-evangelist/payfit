@@ -1,0 +1,100 @@
+aid: payfit
+name: PayFit
+description: >-
+  PayFit is a cloud-based payroll and HR platform serving small and mid-sized
+  businesses in France, the United Kingdom, Spain, Germany, and Italy with
+  automated payroll, expense management, leave and time tracking, and
+  employee self-service. The platform handles country-specific payroll
+  calculations, tax filings, and social declarations alongside core HR
+  workflows. PayFit exposes two REST APIs: a Customer API authenticated via
+  private API keys for direct company-data access, and a Partner API using
+  OAuth 2.0 for integration developers building marketplace solutions.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Payroll
+  - Human Resources
+  - HR Tech
+  - Europe Payroll
+  - Time and Attendance
+  - Employee Management
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/payfit/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: payfit:partner-api
+    name: PayFit Partner API
+    description: >-
+      OAuth 2.0 REST API for solution developers building integrations with
+      PayFit. Once enabled by a customer, partners can synchronize
+      collaborators, payroll journals, meal vouchers, and other HR data.
+    humanURL: https://developers.payfit.io/
+    baseURL: https://partner-api.payfit.com
+    tags:
+      - Partner API
+      - OAuth
+      - Payroll
+      - HR Integration
+    properties:
+      - type: Documentation
+        url: https://developers.payfit.io/
+      - type: Authentication
+        url: https://developers.payfit.io/docs/authentication
+      - type: Webhooks
+        url: https://developers.payfit.io/docs/webhooks
+  - aid: payfit:customer-api
+    name: PayFit Customer API
+    description: >-
+      Private REST API for PayFit customers to access their own company data
+      via long-lived private API keys, suitable for in-house scripts and
+      direct integrations.
+    humanURL: https://developers.payfit.io/
+    baseURL: https://api.payfit.com
+    tags:
+      - Customer API
+      - API Key
+      - Payroll
+      - HR Data
+    properties:
+      - type: Documentation
+        url: https://developers.payfit.io/
+
+common:
+  - type: Website
+    url: https://payfit.com
+  - type: Documentation
+    url: https://developers.payfit.io/
+  - type: Pricing
+    url: https://payfit.com/uk/pricing/
+  - type: Sign Up
+    url: https://app.payfit.com/signup
+features:
+  - name: Automated Payroll
+    description: >-
+      Country-specific payroll engine that automates calculations, payslips,
+      and tax/social filings for FR, UK, ES, DE, and IT.
+  - name: Leave and Absence Management
+    description: >-
+      Track time off, sick leave, and other absences with manager approval
+      workflows and payroll integration.
+  - name: Expense Management
+    description: >-
+      Submit, approve, and reimburse employee expenses with direct flow into
+      payroll where applicable.
+  - name: Employee Self-Service
+    description: >-
+      Employees access payslips, request time off, and update personal
+      information through a self-service portal and mobile app.
+  - name: Time Tracking
+    description: >-
+      Clock in/out, timesheets, and scheduling integrated with payroll
+      calculations and leave balances.
+  - name: Partner Integrations
+    description: >-
+      OAuth-based Partner API enables third-party tools (accounting,
+      HRIS, expense, T&A) to sync data with PayFit.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
