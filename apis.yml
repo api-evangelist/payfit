@@ -62,6 +62,10 @@ apis:
         url: https://developers.payfit.io/
 
 common:
+  - type: GitHubOrganization
+    url: https://github.com/PayFit
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/payfit
   - type: Website
     url: https://payfit.com
   - type: Documentation
