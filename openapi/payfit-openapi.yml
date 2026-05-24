@@ -1,0 +1,216 @@
+openapi: 3.1.0
+info:
+  title: PayFit Partner & Customer API
+  description: >-
+    PayFit exposes two REST APIs for payroll and HR data integration: a Customer
+    API authenticated via private API keys for direct company-data access, and a
+    Partner API using OAuth 2.0 for solution developers building marketplace
+    integrations. Endpoints cover collaborators, contracts, payslips, absences,
+    company information, health insurance, provident funds, and documents.
+  version: "1.0"
+  contact:
+    name: PayFit Developers
+    url: https://developers.payfit.io/
+servers:
+  - url: https://partner-api.payfit.com
+    description: Partner API (OAuth 2.0)
+  - url: https://api.payfit.com
+    description: Customer API (API key)
+security:
+  - bearerAuth: []
+  - apiKeyAuth: []
+tags:
+  - name: Collaborators
+  - name: Contracts
+  - name: Payslips
+  - name: Absences
+  - name: Company
+  - name: Insurance
+  - name: Documents
+paths:
+  /collaborators:
+    get:
+      tags: [Collaborators]
+      summary: List collaborators
+      operationId: listCollaborators
+      responses:
+        '200':
+          description: A list of collaborators.
+    post:
+      tags: [Collaborators]
+      summary: Create collaborator
+      operationId: createCollaborator
+      responses:
+        '201':
+          description: Collaborator created.
+  /collaborators/{id}:
+    get:
+      tags: [Collaborators]
+      summary: Get collaborator by id
+      operationId: getCollaborator
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Collaborator details.
+  /collaborators/{id}/payslips:
+    get:
+      tags: [Payslips]
+      summary: List collaborator payslips
+      operationId: listCollaboratorPayslips
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of payslips.
+  /collaborators/{id}/payslips/{payslipId}:
+    get:
+      tags: [Payslips]
+      summary: Get a collaborator payslip
+      operationId: getCollaboratorPayslip
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: payslipId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Payslip details.
+  /contracts:
+    get:
+      tags: [Contracts]
+      summary: List contracts
+      operationId: listContracts
+      responses:
+        '200':
+          description: A list of contracts.
+    post:
+      tags: [Contracts]
+      summary: Create contract (France only)
+      operationId: createContract
+      responses:
+        '201':
+          description: Contract created.
+  /contracts/{id}:
+    get:
+      tags: [Contracts]
+      summary: Get contract by id
+      operationId: getContract
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Contract details.
+  /absences:
+    get:
+      tags: [Absences]
+      summary: List company absences
+      operationId: listAbsences
+      responses:
+        '200':
+          description: A list of absences.
+  /company:
+    get:
+      tags: [Company]
+      summary: Get company information
+      operationId: getCompany
+      responses:
+        '200':
+          description: Company details.
+  /company/accounting:
+    get:
+      tags: [Company]
+      summary: Get accounting data
+      operationId: getCompanyAccounting
+      responses:
+        '200':
+          description: Accounting data.
+  /company/payroll-status:
+    get:
+      tags: [Company]
+      summary: Get payroll status
+      operationId: getCompanyPayrollStatus
+      responses:
+        '200':
+          description: Payroll status.
+  /company/payment-file:
+    get:
+      tags: [Company]
+      summary: Retrieve payment file
+      operationId: getCompanyPaymentFile
+      responses:
+        '200':
+          description: Payment file.
+  /health-insurance-contracts:
+    get:
+      tags: [Insurance]
+      summary: List health insurance contracts
+      operationId: listHealthInsuranceContracts
+      responses:
+        '200':
+          description: A list of health insurance contracts.
+  /health-insurance/{contractId}:
+    post:
+      tags: [Insurance]
+      summary: Update health insurance affiliation
+      operationId: updateHealthInsuranceAffiliation
+      parameters:
+        - name: contractId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Affiliation updated.
+  /provident-fund-contracts:
+    get:
+      tags: [Insurance]
+      summary: List provident fund contracts
+      operationId: listProvidentFundContracts
+      responses:
+        '200':
+          description: A list of provident fund contracts.
+  /documents/{id}:
+    get:
+      tags: [Documents]
+      summary: Retrieve company document
+      operationId: getDocument
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Document details.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 bearer token for Partner API integrations.
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Private API key for Customer API direct access.
