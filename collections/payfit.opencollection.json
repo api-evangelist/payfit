@@ -1,0 +1,306 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "PayFit Partner & Customer API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Collaborators",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List collaborators",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/collaborators"
+          },
+          "docs": "List collaborators"
+        },
+        {
+          "info": {
+            "name": "Create collaborator",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://partner-api.payfit.com/collaborators"
+          },
+          "docs": "Create collaborator"
+        },
+        {
+          "info": {
+            "name": "Get collaborator by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/collaborators/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get collaborator by id"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Payslips",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List collaborator payslips",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/collaborators/:id/payslips",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List collaborator payslips"
+        },
+        {
+          "info": {
+            "name": "Get a collaborator payslip",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/collaborators/:id/payslips/:payslipId",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "payslipId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a collaborator payslip"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Contracts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List contracts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/contracts"
+          },
+          "docs": "List contracts"
+        },
+        {
+          "info": {
+            "name": "Create contract (France only)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://partner-api.payfit.com/contracts"
+          },
+          "docs": "Create contract (France only)"
+        },
+        {
+          "info": {
+            "name": "Get contract by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/contracts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get contract by id"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Absences",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List company absences",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/absences"
+          },
+          "docs": "List company absences"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Company",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get company information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/company"
+          },
+          "docs": "Get company information"
+        },
+        {
+          "info": {
+            "name": "Get accounting data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/company/accounting"
+          },
+          "docs": "Get accounting data"
+        },
+        {
+          "info": {
+            "name": "Get payroll status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/company/payroll-status"
+          },
+          "docs": "Get payroll status"
+        },
+        {
+          "info": {
+            "name": "Retrieve payment file",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/company/payment-file"
+          },
+          "docs": "Retrieve payment file"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Insurance",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List health insurance contracts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/health-insurance-contracts"
+          },
+          "docs": "List health insurance contracts"
+        },
+        {
+          "info": {
+            "name": "Update health insurance affiliation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://partner-api.payfit.com/health-insurance/:contractId",
+            "params": [
+              {
+                "name": "contractId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update health insurance affiliation"
+        },
+        {
+          "info": {
+            "name": "List provident fund contracts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/provident-fund-contracts"
+          },
+          "docs": "List provident fund contracts"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve company document",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/documents/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve company document"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
