@@ -72,9 +72,9 @@ common:
     url: https://developers.payfit.io/
   - type: Pricing
     url: https://payfit.com/uk/pricing/
-  - type: SignUp
+  - type: Signup
     url: https://app.payfit.com/signup
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://developers.payfit.io/llms.txt
 features:
   - name: Automated Payroll
