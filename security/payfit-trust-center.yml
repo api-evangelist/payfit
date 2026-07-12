@@ -1,0 +1,12 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://trust.payfit.com/
+url: https://trust.payfit.com/
+certifications:
+- ISO 27001
+evidence:
+- source: https://trust.payfit.com/
+  keywords:
+  - iso 27001
+  - trust center

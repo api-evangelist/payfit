@@ -62,6 +62,14 @@ apis:
         url: https://developers.payfit.io/
 
 common:
+  - type: TrustCenter
+    url: security/payfit-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/payfit-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/payfit-domain-security.yml
+  - type: Authentication
+    url: authentication/payfit-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/PayFit
   - type: LinkedIn

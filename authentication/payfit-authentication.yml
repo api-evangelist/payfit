@@ -1,0 +1,23 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/payfit-openapi.yml
+summary:
+  types:
+  - apiKey
+  - http
+  api_key_in:
+  - header
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: OAuth 2.0 bearer token for Partner API integrations.
+  sources:
+  - openapi/payfit-openapi.yml
+- name: apiKeyAuth
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: Private API key for Customer API direct access.
+  sources:
+  - openapi/payfit-openapi.yml
