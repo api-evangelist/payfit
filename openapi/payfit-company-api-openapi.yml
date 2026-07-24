@@ -1,0 +1,66 @@
+openapi: 3.1.0
+info:
+  title: PayFit Partner & Customer Absences Company API
+  description: 'PayFit exposes two REST APIs for payroll and HR data integration: a Customer API authenticated via private API keys for direct company-data access, and a Partner API using OAuth 2.0 for solution developers building marketplace integrations. Endpoints cover collaborators, contracts, payslips, absences, company information, health insurance, provident funds, and documents.'
+  version: '1.0'
+  contact:
+    name: PayFit Developers
+    url: https://developers.payfit.io/
+servers:
+- url: https://partner-api.payfit.com
+  description: Partner API (OAuth 2.0)
+- url: https://api.payfit.com
+  description: Customer API (API key)
+security:
+- bearerAuth: []
+- apiKeyAuth: []
+tags:
+- name: Company
+paths:
+  /company:
+    get:
+      tags:
+      - Company
+      summary: Get company information
+      operationId: getCompany
+      responses:
+        '200':
+          description: Company details.
+  /company/accounting:
+    get:
+      tags:
+      - Company
+      summary: Get accounting data
+      operationId: getCompanyAccounting
+      responses:
+        '200':
+          description: Accounting data.
+  /company/payroll-status:
+    get:
+      tags:
+      - Company
+      summary: Get payroll status
+      operationId: getCompanyPayrollStatus
+      responses:
+        '200':
+          description: Payroll status.
+  /company/payment-file:
+    get:
+      tags:
+      - Company
+      summary: Retrieve payment file
+      operationId: getCompanyPaymentFile
+      responses:
+        '200':
+          description: Payment file.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 bearer token for Partner API integrations.
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Private API key for Customer API direct access.

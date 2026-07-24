@@ -1,0 +1,63 @@
+openapi: 3.1.0
+info:
+  title: PayFit Partner & Customer Absences Insurance API
+  description: 'PayFit exposes two REST APIs for payroll and HR data integration: a Customer API authenticated via private API keys for direct company-data access, and a Partner API using OAuth 2.0 for solution developers building marketplace integrations. Endpoints cover collaborators, contracts, payslips, absences, company information, health insurance, provident funds, and documents.'
+  version: '1.0'
+  contact:
+    name: PayFit Developers
+    url: https://developers.payfit.io/
+servers:
+- url: https://partner-api.payfit.com
+  description: Partner API (OAuth 2.0)
+- url: https://api.payfit.com
+  description: Customer API (API key)
+security:
+- bearerAuth: []
+- apiKeyAuth: []
+tags:
+- name: Insurance
+paths:
+  /health-insurance-contracts:
+    get:
+      tags:
+      - Insurance
+      summary: List health insurance contracts
+      operationId: listHealthInsuranceContracts
+      responses:
+        '200':
+          description: A list of health insurance contracts.
+  /health-insurance/{contractId}:
+    post:
+      tags:
+      - Insurance
+      summary: Update health insurance affiliation
+      operationId: updateHealthInsuranceAffiliation
+      parameters:
+      - name: contractId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Affiliation updated.
+  /provident-fund-contracts:
+    get:
+      tags:
+      - Insurance
+      summary: List provident fund contracts
+      operationId: listProvidentFundContracts
+      responses:
+        '200':
+          description: A list of provident fund contracts.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 bearer token for Partner API integrations.
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Private API key for Customer API direct access.
