@@ -10,7 +10,19 @@ description: >-
   private API keys for direct company-data access, and a Partner API using
   OAuth 2.0 for integration developers building marketplace solutions.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/payfit.png
 tags:
   - Payroll
   - Human Resources
@@ -24,43 +36,110 @@ created: '2026-05-11'
 modified: '2026-05-11'
 specificationVersion: '0.19'
 apis:
-  - aid: payfit:partner-api
-    name: PayFit Partner API
-    description: >-
-      OAuth 2.0 REST API for solution developers building integrations with
-      PayFit. Once enabled by a customer, partners can synchronize
-      collaborators, payroll journals, meal vouchers, and other HR data.
-    humanURL: https://developers.payfit.io/
-    baseURL: https://partner-api.payfit.com
-    tags:
-      - Partner API
-      - OAuth
-      - Payroll
-      - HR Integration
-    properties:
-      - type: Documentation
-        url: https://developers.payfit.io/
-      - type: Authentication
-        url: https://developers.payfit.io/docs/authentication
-      - type: Webhooks
-        url: https://developers.payfit.io/docs/webhooks
-  - aid: payfit:customer-api
-    name: PayFit Customer API
-    description: >-
-      Private REST API for PayFit customers to access their own company data
-      via long-lived private API keys, suitable for in-house scripts and
-      direct integrations.
-    humanURL: https://developers.payfit.io/
-    baseURL: https://api.payfit.com
-    tags:
-      - Customer API
-      - API Key
-      - Payroll
-      - HR Data
-    properties:
-      - type: Documentation
-        url: https://developers.payfit.io/
-
+- aid: payfit:partner-api
+  name: PayFit Partner API
+  description: >-
+    OAuth 2.0 REST API for solution developers building integrations with PayFit. Once enabled by a customer,
+    partners can synchronize collaborators, payroll journals, meal vouchers, and other HR data.
+  humanURL: https://developers.payfit.io/
+  baseURL: https://partner-api.payfit.com
+  tags:
+  - Partner API
+  - OAuth
+  - Payroll
+  - HR Integration
+  properties:
+  - type: Documentation
+    url: https://developers.payfit.io/
+  - type: Authentication
+    url: https://developers.payfit.io/docs/authentication
+  - type: Webhooks
+    url: https://developers.payfit.io/docs/webhooks
+- aid: payfit:customer-api
+  name: PayFit Customer API
+  description: >-
+    Private REST API for PayFit customers to access their own company data via long-lived private API
+    keys, suitable for in-house scripts and direct integrations.
+  humanURL: https://developers.payfit.io/
+  baseURL: https://api.payfit.com
+  tags:
+  - Customer API
+  - API Key
+  - Payroll
+  - HR Data
+  properties:
+  - type: Documentation
+    url: https://developers.payfit.io/
+- aid: payfit:payfit-absences-api
+  name: PayFit Absences API
+  description: The Absences API from PayFit — 1 operation(s) for absences.
+  humanURL: https://developers.payfit.io/
+  baseURL: https://partner-api.payfit.com
+  tags:
+  - Absences
+  properties:
+  - type: OpenAPI
+    url: openapi/payfit-absences-api-openapi.yml
+- aid: payfit:payfit-collaborators-api
+  name: PayFit Collaborators API
+  description: The Collaborators API from PayFit — 2 operation(s) for collaborators.
+  humanURL: https://developers.payfit.io/
+  baseURL: https://partner-api.payfit.com
+  tags:
+  - Collaborators
+  properties:
+  - type: OpenAPI
+    url: openapi/payfit-collaborators-api-openapi.yml
+- aid: payfit:payfit-company-api
+  name: PayFit Company API
+  description: The Company API from PayFit — 4 operation(s) for company.
+  humanURL: https://developers.payfit.io/
+  baseURL: https://partner-api.payfit.com
+  tags:
+  - Company
+  properties:
+  - type: OpenAPI
+    url: openapi/payfit-company-api-openapi.yml
+- aid: payfit:payfit-contracts-api
+  name: PayFit Contracts API
+  description: The Contracts API from PayFit — 2 operation(s) for contracts.
+  humanURL: https://developers.payfit.io/
+  baseURL: https://partner-api.payfit.com
+  tags:
+  - Contracts
+  properties:
+  - type: OpenAPI
+    url: openapi/payfit-contracts-api-openapi.yml
+- aid: payfit:payfit-documents-api
+  name: PayFit Documents API
+  description: The Documents API from PayFit — 1 operation(s) for documents.
+  humanURL: https://developers.payfit.io/
+  baseURL: https://partner-api.payfit.com
+  tags:
+  - Documents
+  properties:
+  - type: OpenAPI
+    url: openapi/payfit-documents-api-openapi.yml
+- aid: payfit:payfit-insurance-api
+  name: PayFit Insurance API
+  description: The Insurance API from PayFit — 3 operation(s) for insurance.
+  humanURL: https://developers.payfit.io/
+  baseURL: https://partner-api.payfit.com
+  tags:
+  - Insurance
+  properties:
+  - type: OpenAPI
+    url: openapi/payfit-insurance-api-openapi.yml
+- aid: payfit:payfit-payslips-api
+  name: PayFit Payslips API
+  description: The Payslips API from PayFit — 2 operation(s) for payslips.
+  humanURL: https://developers.payfit.io/
+  baseURL: https://partner-api.payfit.com
+  tags:
+  - Payslips
+  properties:
+  - type: OpenAPI
+    url: openapi/payfit-payslips-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/payfit-agentic-access.yml
