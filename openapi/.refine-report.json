@@ -1,0 +1,26 @@
+{
+  "provider": "payfit",
+  "sources": [
+    "payfit-absences-api-openapi.yml",
+    "payfit-collaborators-api-openapi.yml",
+    "payfit-company-api-openapi.yml",
+    "payfit-contracts-api-openapi.yml",
+    "payfit-documents-api-openapi.yml",
+    "payfit-insurance-api-openapi.yml",
+    "payfit-payslips-api-openapi.yml"
+  ],
+  "outputs": [
+    "payfit-absences-api-openapi.yml",
+    "payfit-collaborators-api-openapi.yml",
+    "payfit-company-api-openapi.yml",
+    "payfit-contracts-api-openapi.yml",
+    "payfit-documents-api-openapi.yml",
+    "payfit-insurance-api-openapi.yml",
+    "payfit-payslips-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
