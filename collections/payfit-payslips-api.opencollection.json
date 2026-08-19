@@ -1,0 +1,65 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "PayFit Partner & Customer Absences Payslips API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Payslips",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List collaborator payslips",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/collaborators/:id/payslips",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List collaborator payslips"
+        },
+        {
+          "info": {
+            "name": "Get a collaborator payslip",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/collaborators/:id/payslips/:payslipId",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "payslipId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a collaborator payslip"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

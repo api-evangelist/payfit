@@ -1,0 +1,254 @@
+{
+  "item": [
+    {
+      "id": "f8750c9b-3e69-4193-aaac-1779ed5753ea",
+      "name": "Insurance",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "eb92a9d8-8934-40a5-9d68-9546d787816a",
+          "name": "List health insurance contracts",
+          "request": {
+            "name": "List health insurance contracts",
+            "description": {},
+            "url": {
+              "path": [
+                "health-insurance-contracts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5e2f5dfb-8010-45c8-881b-71197b5c5d65",
+              "name": "A list of health insurance contracts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "health-insurance-contracts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "53e2d7da-90f9-4196-93c8-23c3cf69c4dd",
+          "name": "Update health insurance affiliation",
+          "request": {
+            "name": "Update health insurance affiliation",
+            "description": {},
+            "url": {
+              "path": [
+                "health-insurance",
+                ":contractId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "contractId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1cfefe17-128f-481a-b46b-e0eb2f479193",
+              "name": "Affiliation updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "health-insurance",
+                    ":contractId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contractId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "39fa815c-f051-45aa-871a-16946c14b33d",
+          "name": "List provident fund contracts",
+          "request": {
+            "name": "List provident fund contracts",
+            "description": {},
+            "url": {
+              "path": [
+                "provident-fund-contracts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d254d636-14c5-4dca-b4e7-302d318df402",
+              "name": "A list of provident fund contracts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "provident-fund-contracts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://partner-api.payfit.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ab3da609-2dc0-485c-abcb-83dba7fd9224",
+    "name": "PayFit Partner & Customer Absences Insurance API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "PayFit exposes two REST APIs for payroll and HR data integration: a Customer API authenticated via private API keys for direct company-data access, and a Partner API using OAuth 2.0 for solution developers building marketplace integrations. Endpoints cover collaborators, contracts, payslips, absences, company information, health insurance, provident funds, and documents.\n\nContact Support:\n Name: PayFit Developers",
+      "type": "text/plain"
+    }
+  }
+}

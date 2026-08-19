@@ -1,0 +1,71 @@
+# PayFit API Documentation
+
+> Documentation for PayFit API
+
+## Guides
+- [Get to know PayFit](https://developers.payfit.io/docs/cbb.md): Discover how PayFit works to get familiar with our solution
+- [PayFit Webhooks](https://developers.payfit.io/docs/payfit-webhooks.md)
+- [Authentication via API Key](https://developers.payfit.io/docs/authentication-via-api-key.md): As a customer, you can connect to the API via an API key which allows you to access your own company informations.
+- [Start with PayFit API](https://developers.payfit.io/docs/start-with-payfit-api.md): If you are a customer, you will be able to easily connect to your data via the PayFit API.
+- [How to Become a Partner](https://developers.payfit.io/docs/how-to-become-a-partner.md): If you are a solution developer, you can become part of our native integrations marketplace.
+- [Authentication with OAuth2](https://developers.payfit.io/docs/authentication-with-oauth2.md)
+- [QuickStart Guide](https://developers.payfit.io/docs/quickstart-guid.md): 5 steps to get started with PayFit API
+- [Scopes for partners](https://developers.payfit.io/docs/scopes-for-partners.md)
+- [Integrations Requirements](https://developers.payfit.io/docs/integrations-requirements.md)
+- [Sync collaborators](https://developers.payfit.io/docs/syncing-collaborators.md): Save time with the synchronization of collaborator from PayFit to your solution to avoid manual entry
+- [Personal data](https://developers.payfit.io/docs/scope-collaborator-personal.md): Synchronize personal data of collaborators to avoid double manual entries.
+- [Manager](https://developers.payfit.io/docs/manager.md): Set-up the organizational chart with the manager of the colaborators.
+- [Sync payroll journal](https://developers.payfit.io/docs/accounting-data.md): Save time with the secured and automated export of the PayFit payroll journal
+- [Sync absences](https://developers.payfit.io/docs/sync-abscences.md)
+- [Create collaborators and contracts 🇫🇷](https://developers.payfit.io/docs/init-employees.md): This guide provides instructions on how to initialize collaborators and contracts using the PayFit API. This process involves creating a collaborator and optionally initializing a contract for them.
+- [FAQ](https://developers.payfit.io/docs/faq-1.md): Check the common FAQ. We will keep enriching so stay tuned !
+- [Rate limits](https://developers.payfit.io/docs/rate-limits.md)
+- [Contact the team](https://developers.payfit.io/docs/contact-the-team.md)
+
+## API Reference
+- [Get Company 🌍](https://developers.payfit.io/reference/get_company.md): Returns the basic information of the company. \ **Required scopes**: None
+- [Get accounting data 🇫🇷](https://developers.payfit.io/reference/get_companyaccounting.md): Returns accounting of the company for a given month. The data is structured as CSV. \ **Required scopes**: *accounting:read*
+- [Get accounting v2 data 🇫🇷](https://developers.payfit.io/reference/get_companyaccountingv2.md): Only available for FR. Returns accounting data of the company for a given month. For French companies, the data returned is the same than the one in the automatic accounting exports, so the company accounting exports have to be configured properly in order to get details by analytical code, and by employee.  \ **Required scopes**: *accounting:read*
+- [Get Payroll Status 🌍](https://developers.payfit.io/reference/get_companypayrollstatus.md): Returns the payroll status on a given pay period. \ **Required scopes**: None
+- [Get Income Taxes documents 🇬🇧](https://developers.payfit.io/reference/get_companyincometaxesdocuments.md): Returns all the documents related to income taxes (P45, P60, P11D). This endpoint should only be used for UK companies.  \ **Required scopes**: *contracts:payslips:read*
+- [List all Health Insurance contracts 🇫🇷](https://developers.payfit.io/reference/get_healthinsurancecontracts.md): Returns all Health Insurance contracts. \ **Required scopes**: *health-insurance:read*
+- [List all Provident Fund contracts 🇫🇷](https://developers.payfit.io/reference/get_providentfundcontracts.md): Returns all Provident Fund contracts. \ **Required scopes**: *health-insurance:read*
+- [Get Auto Enrolment documents 🇬🇧](https://developers.payfit.io/reference/get_companyautoenrolmentdocuments.md): Returns the all documents related to auto enrolment. This endpoint should only be used for UK companies.  \ **Required scopes**: *pension:read*
+- [Get a company's document 🌍](https://developers.payfit.io/reference/get_document_by_id.md): Returns a company's document. \ \ Please note that this endpoint will only work with URLs provided by other endpoints of the PayFit API, such as GET /auto-enrolment-documents or /income-taxes-documents. \ Other documents are not accessible via this endpoint. \ **Required scopes**: *contracts:payslips:read, pension:read*
+- [Get Company 🇫🇷](https://developers.payfit.io/reference/get_company_fr.md): Returns the basic information of the company with french specific data. \ **Required scopes**: None
+- [Get payment file 🌍](https://developers.payfit.io/reference/get_companypaymentfile.md): Returns the payment file of the company for a given month. \ **Required scopes**: *payment-files:read*
+- [List Collaborators 🌍](https://developers.payfit.io/reference/get_collaborators.md): Returns the collaborators of the company. This list is paginated. The output can be filtered given some fields.  \ **Required scopes**: *collaborators:read*
+- [Create a Collaborator 🌍](https://developers.payfit.io/reference/post_collaborator.md): Create a collaborator and return its ID. The created collaborator won't have a contract, and therefore won't appear in the collaborators list in the PayFit app. In order to create a contract, use the [create contract endpoint](https://developers.payfit.io/reference/post_contract).  \ **Required scopes**: *collaborators:write*
+- [List all Collaborators Meal Vouchers 🇫🇷](https://developers.payfit.io/reference/get_collaborators_meal_vouchers.md): Returns all Collaborators Meal Vouchers for a given month. Only available for french companies. \ **Required scopes**: *collaborators:meal-vouchers:read*
+- [Get a collaborator 🌍](https://developers.payfit.io/reference/get_collaborator_by_id.md): Returns the collaborator by ID. \ **Required scopes**: *collaborators:read*
+- [Get a collaborator's payslip 🌍](https://developers.payfit.io/reference/get_collaborator_contract_payslip_by_id.md): Returns a collaborator's payslip. \ **Required scopes**: *contracts:payslips:read*
+- [List all collaborator's payslips 🌍](https://developers.payfit.io/reference/get_collaborator_payslips.md): Returns all the payslips of a collaborator by ID. \ **Required scopes**: *contracts:payslips:read*
+- [List all Contracts 🌍](https://developers.payfit.io/reference/get_contracts.md): Returns all Contracts. This list is paginated. \ **Required scopes**: *contracts:read*
+- [List all Worked Time by contract 🇫🇷](https://developers.payfit.io/reference/get_contracts_worked_time.md): Returns the worked time for every contract for the given pay period. This list is paginated. \ **Required scopes**: *time:read*
+- [Get a contract 🌍](https://developers.payfit.io/reference/get_contract.md): Returns a contract information by ID. \ **Required scopes**: *contracts:read*
+- [List all Contracts 🇫🇷](https://developers.payfit.io/reference/get_contracts_fr.md): Returns all Contracts with french specific data. This list is paginated. \ **Required scopes**: *contracts:read*
+- [Get a contract 🇫🇷](https://developers.payfit.io/reference/get_contract_fr.md): Returns a contract information by ID with french specific data. \ **Required scopes**: *contracts:read*
+- [Update a Health Insurance of an employee's contract 🇫🇷](https://developers.payfit.io/reference/sethealthinsuranceaffiliation.md): Allows the affiliation of an health insurance to an employee contract. \ **Required scopes**: *health-insurance:write*
+- [Update a Provident Fund of an employee's contract 🇫🇷](https://developers.payfit.io/reference/updatecontractprovidentfund.md): Allows the affiliation of a provident fund to an employee contract. \ **Required scopes**: *health-insurance:write*
+- [Create a Contract 🇫🇷](https://developers.payfit.io/reference/post_contract.md): Create a basic contract on a collaborator and return its ID. Important notes: 1. **Contract completion**: the created contract won't be finalized, and the employee won't be available for payroll while their information is not set by an admin in the PayFit app. 2. **Multiple Contracts**: While it is technically possible to create multiple contracts for an employee, it is strongly recommended to avoid this during the initialization phase. It will be difficult for the HR manager to identify which contract needs to be updated. We encourage implementing a control to prevent initializing a new contract if one is already in progress. If your use case requires multiple contracts, proceed with caution and ensure proper identification and management. 3. **Country availability**: Currently, this functionality is only available for France. It will be made available for Spain and the United Kingdom in the future.  \ **Required scopes**: *collaborators:contracts:write*
+- [Declare Partnership Data 🇫🇷](https://developers.payfit.io/reference/post_partner_declarations.md): Create declaration on a partner company for billing. (Only for partners) \ **Required scopes**: None
+- [Create health insurance contracts from setup sheets 🇫🇷](https://developers.payfit.io/reference/post_health_insurance_setup_sheets.md): Allows to create or update health insurance contracts of a company, given setup sheets.  Setup sheets are the documents sent to "net-entreprises.fr" when new health insurance or prevoyance contracts are available. Notes : - This is only available for French companies - This is only available to specific partners  \ **Required scopes**: *health-insurance:write*
+- [Request a Health Insurance regularization 🇫🇷](https://developers.payfit.io/reference/requestcontracthealthinsuranceregularization.md): In case an affiliation was applied too late in PayFit, a regularization can be requested. Note: this endpoint is only available for PayFit partners \ **Required scopes**: *health-insurance:write*
+- [List absences 🌍](https://developers.payfit.io/reference/get_absences.md): Returns the absences in a company. This list is paginated. The output can be filtered given some fields like contractId. By default, only approved absences are returned, but this can be changed by setting `status` filter.  \ **Required scopes**: *time:read*
+- [Create a validated absence 🌍](https://developers.payfit.io/reference/post_absences.md): Creates a validated absence for a collaborator in a company and returns the new absence ID.  \ **Required scopes**: *time:write*
+- [Cancel an absence 🌍](https://developers.payfit.io/reference/delete_absence.md): Cancels an existing absence in a company.  \ **Required scopes**: *time:write*
+
+## Recipes
+- [Get all the collaborators of the company](https://developers.payfit.io/recipes/get-all-the-collaborators-of-the-company.md)
+
+## Changelog
+- [Global improvements on collaborators data](https://developers.payfit.io/changelog/global-improvements-on-collaborators-data.md)
+- [Improvements on company data](https://developers.payfit.io/changelog/improvements-on-company-data.md)
+- [December 2025 Improvements](https://developers.payfit.io/changelog/december-2025-improvements.md)
+- [Retroactive generation of accountingV2 FR documents](https://developers.payfit.io/changelog/retroactive-generation-of-accountingv2-fr-documents.md)
+- [Improved absences retrieval](https://developers.payfit.io/changelog/improved-absences-retrieval.md)
+- [October improvements](https://developers.payfit.io/changelog/october-improvements.md)
+- [September improvements](https://developers.payfit.io/changelog/september-improvements.md)
+- [August improvements](https://developers.payfit.io/changelog/august-improvements.md)
+- [July improvements](https://developers.payfit.io/changelog/july-improvements.md)
+- [June improvements](https://developers.payfit.io/changelog/june-improvements.md)

@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "PayFit Partner & Customer Absences Collaborators API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Collaborators",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List collaborators",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/collaborators"
+          },
+          "docs": "List collaborators"
+        },
+        {
+          "info": {
+            "name": "Create collaborator",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://partner-api.payfit.com/collaborators"
+          },
+          "docs": "Create collaborator"
+        },
+        {
+          "info": {
+            "name": "Get collaborator by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/collaborators/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get collaborator by id"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

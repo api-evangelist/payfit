@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "PayFit Partner & Customer Absences Insurance API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Insurance",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List health insurance contracts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/health-insurance-contracts"
+          },
+          "docs": "List health insurance contracts"
+        },
+        {
+          "info": {
+            "name": "Update health insurance affiliation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://partner-api.payfit.com/health-insurance/:contractId",
+            "params": [
+              {
+                "name": "contractId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update health insurance affiliation"
+        },
+        {
+          "info": {
+            "name": "List provident fund contracts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/provident-fund-contracts"
+          },
+          "docs": "List provident fund contracts"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

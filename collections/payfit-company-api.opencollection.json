@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "PayFit Partner & Customer Absences Company API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Company",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get company information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/company"
+          },
+          "docs": "Get company information"
+        },
+        {
+          "info": {
+            "name": "Get accounting data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/company/accounting"
+          },
+          "docs": "Get accounting data"
+        },
+        {
+          "info": {
+            "name": "Get payroll status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/company/payroll-status"
+          },
+          "docs": "Get payroll status"
+        },
+        {
+          "info": {
+            "name": "Retrieve payment file",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://partner-api.payfit.com/company/payment-file"
+          },
+          "docs": "Retrieve payment file"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
