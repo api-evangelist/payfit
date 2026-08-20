@@ -45,6 +45,11 @@ apis:
   baseURL: https://partner-api.payfit.com
   tags:
   - Partner API
+  - Authentication
+  - Payroll
+  - HR Integration
+  tags_raw:
+  - Partner API
   - OAuth
   - Payroll
   - HR Integration
@@ -63,6 +68,11 @@ apis:
   humanURL: https://developers.payfit.io/
   baseURL: https://api.payfit.com
   tags:
+  - Customer API
+  - APIKeys
+  - Payroll
+  - HR Data
+  tags_raw:
   - Customer API
   - API Key
   - Payroll
