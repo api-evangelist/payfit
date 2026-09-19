@@ -39,6 +39,12 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/payfit.png
 tags:
   - Payroll
   - Human Resources
+  - Europe Payroll
+  - Time and Attendance
+  - Employee Management
+tags_raw:
+  - Payroll
+  - Human Resources
   - HR Tech
   - Europe Payroll
   - Time and Attendance
