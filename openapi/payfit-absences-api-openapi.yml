@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: PayFit Partner & Customer Absences API
   description: 'PayFit exposes two REST APIs for payroll and HR data integration: a Customer API authenticated via private API keys for direct company-data access, and a Partner API using OAuth 2.0 for solution developers building marketplace integrations. Endpoints cover collaborators, contracts, payslips, absences, company information, health insurance, provident funds, and documents.'

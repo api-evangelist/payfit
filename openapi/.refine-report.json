@@ -1,13 +1,7 @@
 {
   "provider": "payfit",
   "sources": [
-    "payfit-absences-api-openapi.yml",
-    "payfit-collaborators-api-openapi.yml",
-    "payfit-company-api-openapi.yml",
-    "payfit-contracts-api-openapi.yml",
-    "payfit-documents-api-openapi.yml",
-    "payfit-insurance-api-openapi.yml",
-    "payfit-payslips-api-openapi.yml"
+    "_original/payfit-openapi.yml"
   ],
   "outputs": [
     "payfit-absences-api-openapi.yml",
@@ -21,6 +15,18 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "payfit-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "payfit-absences-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "payfit-collaborators-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "payfit-company-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "payfit-contracts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "payfit-documents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "payfit-insurance-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "payfit-payslips-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
