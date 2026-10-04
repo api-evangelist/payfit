@@ -1,0 +1,76 @@
+slug: payfit
+provider: PayFit
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 6
+edges:
+- tag: Payslips
+  spec_file: payfit-payslips-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.88
+  evidence: GET /collaborators/{id}/payslips  listCollaboratorPayslips  List collaborator payslips
+  reason: Retrieval of employee payslips from a cloud payroll platform is payroll administration / employee
+    records, squarely HR Operations Management.
+- tag: Collaborators
+  spec_file: payfit-collaborators-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.85
+  evidence: GET /collaborators listCollaborators; POST /collaborators createCollaborator
+  reason: Collaborators are employee records in PayFit's payroll/HR platform; create and list operations
+    maintain employee master data, which is HR Operations Management (employee records, payroll administration).
+- tag: Insurance
+  spec_file: payfit-insurance-api-openapi.yml
+  capability_id: BC-300.30
+  capability_id_l1: BC-300
+  capability_name: Compensation & Benefits Management
+  confidence: 0.82
+  evidence: GET /health-insurance-contracts  listHealthInsuranceContracts  List health insurance contracts;
+    POST /health-insurance/{contractId}  updateHealthInsuranceAffiliation; GET /provident-fund-contracts  listProvidentFundContracts
+  reason: Operations manage employee health insurance contracts, affiliations and provident fund contracts
+    on a payroll/HR platform — i.e. employee benefits administration, which sits under Compensation &
+    Benefits Management. Not an insurance-carrier capability.
+- tag: Absences
+  spec_file: payfit-absences-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.7
+  evidence: 'GET /absences listAbsences List company absences; description: ''Endpoints cover collaborators,
+    contracts, payslips, absences'''
+  reason: Absence/leave records retrieved from a payroll and HR platform are HR operational employee data.
+    Mapped to HR Operations Management; moderate confidence because absence/time tracking could also be
+    read as a workforce administration sub-area not separately listed.
+- tag: Company
+  spec_file: payfit-company-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.7
+  evidence: GET /company/payroll-status getCompanyPayrollStatus Get payroll status; GET /company/payment-file
+    Retrieve payment file
+  reason: Despite the generic 'Company' tag, the operations expose payroll status and the payroll payment
+    file, i.e. payroll administration. Mapped to HR Operations Management; some ambiguity as the accounting-data
+    endpoint touches financial reporting.
+- tag: Contracts
+  spec_file: payfit-contracts-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.7
+  evidence: GET /contracts listContracts; POST /contracts createContract Create contract (France only)
+  reason: In this payroll/HR context contracts are employment contracts tied to collaborators, so this
+    is employee record administration, not commercial/legal contract lifecycle management. Moderate confidence
+    given the homograph risk with BC-150.10.
