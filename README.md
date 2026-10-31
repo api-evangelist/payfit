@@ -1,4 +1,4 @@
-# PayFit (payfit)
+# PayFit
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,81 +66,115 @@
 
 PayFit is a cloud-based payroll and HR platform serving small and mid-sized businesses in France, the United Kingdom, Spain, Germany, and Italy with automated payroll, expense management, leave and time tracking, and employee self-service. The platform handles country-specific payroll calculations, tax filings, and social declarations alongside core HR workflows. PayFit exposes two REST APIs: a Customer API authenticated via private API keys for direct company-data access, and a Partner API using OAuth 2.0 for integration developers building marketplace solutions.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/payfit/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/payfit/refs/heads/main/apis.yml)
+**Areas:** Payroll · Human Resources · Europe Payroll · Time and Attendance · Employee Management
 
-## Scope
+## PayFit on APIs.io
 
-- **Type:** Index
+Everything profiled for PayFit is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/payfit/](https://apis.io/providers/payfit/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (9)
 
-- Payroll
-- Human Resources
-- HR Tech
-- Europe Payroll
-- Time and Attendance
-- Employee Management
+- [PayFit Partner API](https://apis.io/apis/payfit/partner-api/) — OAuth 2.0 REST API for solution developers building integrations with PayFit. Once enabled by a customer, partners can synchronize collaborators, payroll…
+- [PayFit Customer API](https://apis.io/apis/payfit/customer-api/) — Private REST API for PayFit customers to access their own company data via long-lived private API keys, suitable for in-house scripts and direct integrations.
+- [PayFit Absences API](https://apis.io/apis/payfit/payfit-absences-api/) — The Absences API from PayFit — 1 operation(s) for absences.
+- [PayFit Collaborators API](https://apis.io/apis/payfit/payfit-collaborators-api/) — The Collaborators API from PayFit — 2 operation(s) for collaborators.
+- [PayFit Company API](https://apis.io/apis/payfit/payfit-company-api/) — The Company API from PayFit — 4 operation(s) for company.
+- [PayFit Contracts API](https://apis.io/apis/payfit/payfit-contracts-api/) — The Contracts API from PayFit — 2 operation(s) for contracts.
+- [PayFit Documents API](https://apis.io/apis/payfit/payfit-documents-api/) — The Documents API from PayFit — 1 operation(s) for documents.
+- [PayFit Insurance API](https://apis.io/apis/payfit/payfit-insurance-api/) — The Insurance API from PayFit — 3 operation(s) for insurance.
+- [PayFit Payslips API](https://apis.io/apis/payfit/payfit-payslips-api/) — The Payslips API from PayFit — 2 operation(s) for payslips.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-11
-- **Modified:** 2026-05-11
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### PayFit Partner API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-OAuth 2.0 REST API for solution developers building integrations with PayFit. Once enabled by a customer, partners can synchronize collaborators, payroll journals, meal vouchers, and other HR data.
+- [Payfit Agentic Access](https://apis.io/agentic-access/payfit/payfit-agentic-access/)
 
-- **Human URL:** [https://developers.payfit.io/](https://developers.payfit.io/)
-- **Base URL:** `https://partner-api.payfit.com`
+#### Collections (8)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Partner API
-- OAuth
-- Payroll
-- HR Integration
+- [PayFit Partner & Customer API](https://apis.io/collections/payfit/open-payfit/)
+- [PayFit Partner & Customer Absences API](https://apis.io/collections/payfit/open-payfit-absences-api/)
+- [PayFit Partner & Customer Absences Collaborators API](https://apis.io/collections/payfit/open-payfit-collaborators-api/)
+- [PayFit Partner & Customer Absences Company API](https://apis.io/collections/payfit/open-payfit-company-api/)
+- [PayFit Partner & Customer Absences Contracts API](https://apis.io/collections/payfit/open-payfit-contracts-api/)
+- [PayFit Partner & Customer Absences Documents API](https://apis.io/collections/payfit/open-payfit-documents-api/)
+- [PayFit Partner & Customer Absences Insurance API](https://apis.io/collections/payfit/open-payfit-insurance-api/)
+- [PayFit Partner & Customer Absences Payslips API](https://apis.io/collections/payfit/open-payfit-payslips-api/)
 
-#### Properties
+#### Security (4)
 
-- [Documentation](https://developers.payfit.io/)
-- [Authentication](https://developers.payfit.io/docs/authentication)
-- [Webhooks](https://developers.payfit.io/docs/webhooks)
-- [Postman Collection](collections/payfit.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/payfit.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### PayFit Customer API
+- [Payfit Authentication](https://apis.io/security/payfit/payfit-authentication/)
+- [Payfit Domain Security](https://apis.io/security/payfit/payfit-domain-security/)
+- [Payfit Trust Center](https://apis.io/security/payfit/payfit-trust-center/)
+- [Payfit Vulnerability Disclosure](https://apis.io/security/payfit/payfit-vulnerability-disclosure/)
 
-Private REST API for PayFit customers to access their own company data via long-lived private API keys, suitable for in-house scripts and direct integrations.
+## Where to find this API
 
-- **Human URL:** [https://developers.payfit.io/](https://developers.payfit.io/)
-- **Base URL:** `https://api.payfit.com`
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-#### Tags
-
-- Customer API
-- API Key
-- Payroll
-- HR Data
-
-#### Properties
-
-- [Documentation](https://developers.payfit.io/)
-- [Postman Collection](collections/payfit.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/payfit.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/PayFit)
-- [LinkedIn](https://www.linkedin.com/company/payfit)
 - [Website](https://payfit.com)
 - [Documentation](https://developers.payfit.io/)
 - [Pricing](https://payfit.com/uk/pricing/)
-- [Sign Up](https://app.payfit.com/signup)
-- [L L Ms Txt](https://developers.payfit.io/llms.txt)
+- [Blog](https://payfit.com/blog/)
+- [GitHub](https://github.com/PayFit)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 26.0** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 44.7 |
+| Contract governance | 0.0 |
+| Operational transparency | 6.6 |
+| Developer ergonomics | 13.1 |
+| Access clarity | 21.1 |
+
+**Agent readiness 21.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | unknown |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 22.5** — Employment & Payroll
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/payfit/](https://apis.io/providers/payfit/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for PayFit: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/payfit/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
